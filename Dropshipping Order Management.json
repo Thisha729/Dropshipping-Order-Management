@@ -1,0 +1,395 @@
+{
+  "name": "Dropshipping Order Management",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "c6bbbac4-fade-4278-8884-376b312b9a74",
+      "name": "New Order Received (Demo)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1",
+              "name": "Order ID",
+              "value": "DEMO001",
+              "type": "string"
+            },
+            {
+              "id": "a2",
+              "name": "Customer Name",
+              "value": "Thishalini",
+              "type": "string"
+            },
+            {
+              "id": "a3",
+              "name": "Email",
+              "value": "velathisha7@gmail.com",
+              "type": "string"
+            },
+            {
+              "id": "a4",
+              "name": "Product Name",
+              "value": "Smart Watch",
+              "type": "string"
+            },
+            {
+              "id": "a5",
+              "name": "Quantity",
+              "value": 1,
+              "type": "number"
+            },
+            {
+              "id": "a6",
+              "name": "Selling Price",
+              "value": 25,
+              "type": "number"
+            },
+            {
+              "id": "a7",
+              "name": "Supplier Cost",
+              "value": 15,
+              "type": "number"
+            },
+            {
+              "id": "a8",
+              "name": "Total Amount",
+              "value": 25,
+              "type": "number"
+            },
+            {
+              "id": "a9",
+              "name": "Profit",
+              "value": 10,
+              "type": "number"
+            },
+            {
+              "id": "a10",
+              "name": "Payment Status",
+              "value": "Paid",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "48be40f4-3613-4785-bc3a-53e2fc45fc80",
+      "name": "Sample Order Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "1VOoot_buhOngH4y8ElodjCWQLUfh2yjnLMVlxAYtkfA",
+          "cachedResultName": "Dropshipping Business Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1VOoot_buhOngH4y8ElodjCWQLUfh2yjnLMVlxAYtkfA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Orders",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Order ID",
+              "displayName": "Order ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Customer Name",
+              "displayName": "Customer Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Product Name",
+              "displayName": "Product Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Quantity",
+              "displayName": "Quantity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Selling Price",
+              "displayName": "Selling Price",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Supplier Cost",
+              "displayName": "Supplier Cost",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Total Amount",
+              "displayName": "Total Amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Profit",
+              "displayName": "Profit",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Payment Status",
+              "displayName": "Payment Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "d479eb44-5898-4418-b4e6-ba36b4e3e00c",
+      "name": "Save Order to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        448,
+        0
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "fGh5zsuWiZyBUfA8",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Sample Order Data').item.json.Email }}",
+        "subject": "=Order Confirmation - {{ $('Sample Order Data').item.json['Order ID'] }}",
+        "message": "=<p>Hi {{ $('Sample Order Data').item.json['Customer Name'] }},</p><p>Thank you for your order! Here are the details:</p><ul><li>Order ID: {{ $('Sample Order Data').item.json['Order ID'] }}</li><li>Product: {{ $('Sample Order Data').item.json['Product Name'] }}</li><li>Quantity: {{ $('Sample Order Data').item.json.Quantity }}</li><li>Total: ${{ $('Sample Order Data').item.json['Total Amount'] }}</li><li>Payment status: {{ $('Sample Order Data').item.json['Payment Status'] }}</li></ul><p>We will notify you when your order ships.</p>",
+        "options": {}
+      },
+      "id": "6a08436b-7219-450d-ab34-cf7569b28add",
+      "name": "Send Confirmation Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        0
+      ],
+      "webhookId": "0c9fa82c-42e2-4180-a6d2-24ab279accfc",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "d6DDJd2IwbPVFjm5",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "orders/new",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        144,
+        144
+      ],
+      "id": "32972e49-c559-433c-ad69-7999b2ccadec",
+      "name": "Webhook",
+      "webhookId": "d45c1648-c602-46e9-b3b1-3b6d0298d7e4"
+    },
+    {
+      "parameters": {
+        "formTitle": "Dropshipping Order Form",
+        "formDescription": "Enter Customer Order Details",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Customer Name"
+            },
+            {
+              "fieldLabel": "Email",
+              "fieldType": "email"
+            },
+            {
+              "fieldLabel": "Product Name"
+            },
+            {
+              "fieldLabel": "Quantity",
+              "fieldType": "number"
+            },
+            {
+              "fieldLabel": "Selling Price",
+              "fieldType": "number"
+            },
+            {
+              "fieldLabel": "Supplier Cost",
+              "fieldType": "number"
+            },
+            {
+              "fieldLabel": "Payment Status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Paid"
+                  },
+                  {
+                    "option": "Pending"
+                  },
+                  {
+                    "option": "Failed"
+                  }
+                ]
+              }
+            },
+            {
+              "fieldLabel": "Profit",
+              "fieldType": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        896,
+        0
+      ],
+      "id": "7faa9998-5929-4281-bbf9-1cdb47e98b52",
+      "name": "On form submission",
+      "webhookId": "39689b87-e23f-48fd-9d50-7a550b6472cd"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "New Order Received (Demo)": {
+      "main": [
+        [
+          {
+            "node": "Sample Order Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sample Order Data": {
+      "main": [
+        [
+          {
+            "node": "Save Order to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Order to Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "591e534b-2939-4443-bff7-ddc4dd9cf003",
+  "meta": {
+    "instanceId": "f47a8c719ce9a7f4c8f6b87015739c003b25234a400683862a65689f4b121b7e"
+  },
+  "nodeGroups": [],
+  "id": "hv3gRChsD3QSOePA",
+  "tags": []
+}
